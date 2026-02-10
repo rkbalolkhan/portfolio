@@ -67,7 +67,55 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/40 to-white/50 backdrop-blur-xl border-y border-white/30 overflow-hidden">
+    <section id="projects" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/5 to-transparent overflow-hidden">
+      {/* Animated SVG Vectors */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Animated project connection lines */}
+        <svg className="hidden lg:block absolute w-full h-full opacity-20" viewBox="0 0 1200 800" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="currentColor" className="text-secondary" />
+              <stop offset="100%" stopColor="currentColor" className="text-secondary" opacity="0" />
+            </linearGradient>
+          </defs>
+          <motion.path
+            d="M 200 300 L 600 200 L 1000 400"
+            fill="none"
+            stroke="url(#lineGradient)"
+            strokeWidth="2"
+            animate={{ opacity: [0.2, 0.5, 0.2], pathLength: [0, 1] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          />
+          <motion.path
+            d="M 100 500 Q 400 400, 700 500 T 1100 500"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            className="text-secondary"
+            animate={{ opacity: [0.1, 0.4, 0.1] }}
+            transition={{ duration: 4, repeat: Infinity }}
+          />
+        </svg>
+
+        {/* Rotating tech stack indicators */}
+        <motion.svg
+          animate={{ rotate: 360 }}
+          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+          className="hidden lg:block absolute top-40 right-20 w-40 h-40 text-secondary/8"
+          viewBox="0 0 100 100"
+        >
+          <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          {/* Project markers */}
+          <circle cx="50" cy="15" r="1.5" fill="currentColor" />
+          <circle cx="75" cy="50" r="1.5" fill="currentColor" />
+          <circle cx="50" cy="85" r="1.5" fill="currentColor" />
+        </motion.svg>
+
+        {/* Background orbs */}
+      </div>
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -76,7 +124,7 @@ export default function Projects() {
             y: [0, 50, 0],
           }}
           transition={{ duration: 20, repeat: Infinity }}
-          className="absolute -top-40 -right-40 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"
+          className="absolute -top-40 -right-40 w-80 h-80 bg-secondary/8 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -84,7 +132,7 @@ export default function Projects() {
             y: [0, -100, 0],
           }}
           transition={{ duration: 25, repeat: Infinity }}
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-200/5 rounded-full blur-3xl"
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"
         />
       </div>
 

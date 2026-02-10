@@ -30,7 +30,7 @@ export default function Navbar() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`hidden md:flex items-center ${isScrolled ? 'gap-8 bg-primary/30 rounded-full px-8 py-4 shadow-2xl backdrop-blur-xl border border-white/20' : 'gap-8 bg-primary/20 w-full px-8 py-5 shadow-lg backdrop-blur-xl border-b border-white/20'}`}
+        className={`hidden md:flex items-center ${isScrolled ? 'gap-8 bg-primary/30 rounded-full px-8 py-4 shadow-2xl backdrop-blur-xl border border-secondary/20' : 'gap-8 bg-primary/20 w-full px-8 py-5 shadow-lg backdrop-blur-xl border-b border-secondary/20'}`}
       >
         {/* Logo */}
         <a
@@ -73,7 +73,7 @@ export default function Navbar() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`md:hidden flex items-center justify-between ${isScrolled ? 'max-w-sm w-full bg-primary/30 rounded-full px-6 py-4' : 'w-full bg-primary/20 px-4 py-4'} shadow-2xl backdrop-blur-xl border ${isScrolled ? 'border-white/20' : 'border-b border-white/20'}`}
+        className={`md:hidden flex items-center justify-between ${isScrolled ? 'max-w-sm w-full bg-primary/30 rounded-full px-6 py-4' : 'w-full bg-primary/20 px-4 py-4'} shadow-2xl backdrop-blur-xl border ${isScrolled ? 'border-secondary/20' : 'border-b border-secondary/20'}`}
       >
         {/* Logo */}
         <a
@@ -100,7 +100,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className={`md:hidden fixed ${isScrolled ? 'top-20 left-4 right-4' : 'top-16 left-0 right-0'} bg-primary/30 ${isScrolled ? 'rounded-3xl' : 'rounded-none'} p-6 shadow-2xl backdrop-blur-xl border ${isScrolled ? 'border-white/20' : 'border-b border-white/20'}`}
+            className={`md:hidden fixed ${isScrolled ? 'top-20 left-4 right-4' : 'top-16 left-0 right-0'} bg-primary/30 ${isScrolled ? 'rounded-3xl' : 'rounded-none'} p-6 shadow-2xl backdrop-blur-xl border ${isScrolled ? 'border-secondary/20' : 'border-b border-secondary/20'}`}
           >
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (

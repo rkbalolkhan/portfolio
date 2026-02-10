@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
 export default function Hero() {
   const floatingVariants = {
@@ -33,7 +34,10 @@ export default function Hero() {
   }
 
   return (
-    <section id="hero" className="relative pt-4 pb-2 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section
+      id="hero"
+      className="relative pt-4 pb-2 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/[0.02] to-transparent overflow-hidden"
+    >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Gradient Orbs - Hidden on Mobile */}
@@ -43,7 +47,7 @@ export default function Hero() {
             y: [0, 50, 0],
           }}
           transition={{ duration: 20, repeat: Infinity }}
-          className="hidden md:block absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-secondary/20 to-secondary/5 rounded-full blur-3xl"
+          className="hidden md:block absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-secondary/15 to-secondary/5 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -51,7 +55,7 @@ export default function Hero() {
             y: [0, -100, 0],
           }}
           transition={{ duration: 25, repeat: Infinity }}
-          className="hidden md:block absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-tr from-blue-200/10 to-secondary/5 rounded-full blur-3xl"
+          className="hidden md:block absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-tr from-secondary/10 to-secondary/5 rounded-full blur-3xl"
         />
 
         {/* Mobile Background Elements - Smaller */}
@@ -79,9 +83,56 @@ export default function Hero() {
           className="hidden md:block absolute top-40 left-20 w-24 h-24 text-secondary/10 z-20"
           viewBox="0 0 100 100"
         >
-          <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="1" />
-          <path d="M50 10 Q80 30 80 50 Q80 80 50 80 Q20 80 20 50 Q20 30 50 10" fill="none" stroke="currentColor" strokeWidth="1" />
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          <path
+            d="M50 10 Q80 30 80 50 Q80 80 50 80 Q20 80 20 50 Q20 30 50 10"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
         </motion.svg>
+
+        {/* Additional Decorative SVG Elements */}
+        <motion.svg
+          animate={{ rotate: 360 }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="hidden lg:block absolute bottom-20 right-40 w-32 h-32 text-secondary/8 z-10"
+          viewBox="0 0 100 100"
+        >
+          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <path d="M50 10 L50 90 M10 50 L90 50" stroke="currentColor" strokeWidth="0.5" />
+        </motion.svg>
+
+        {/* Animated connecting lines */}
+        <svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 800" preserveAspectRatio="none">
+          <motion.path
+            d="M 100 200 Q 400 150, 600 250 T 1100 200"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            className="text-secondary/5"
+            animate={{ opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 4, repeat: Infinity }}
+          />
+          <motion.path
+            d="M 50 600 Q 300 500, 600 550 T 1150 600"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            className="text-secondary/5"
+            animate={{ opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 5, repeat: Infinity }}
+          />
+        </svg>
 
         <motion.svg
           variants={floatingVariants}
@@ -90,8 +141,20 @@ export default function Hero() {
           className="hidden md:block absolute bottom-40 right-16 w-32 h-32 text-secondary/5 z-20"
           viewBox="0 0 100 100"
         >
-          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="1" />
-          <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <polygon
+            points="50,10 90,90 10,90"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.5"
+          />
         </motion.svg>
 
         {/* Animated Dots */}
@@ -154,8 +217,20 @@ export default function Hero() {
                 className="absolute -bottom-10 left-0 w-32 h-32 text-secondary/20 z-10"
                 viewBox="0 0 100 100"
               >
-                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M50 15 L75 50 L50 85 L25 50 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
+                <path
+                  d="M50 15 L75 50 L50 85 L25 50 Z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                />
               </motion.svg>
 
               <motion.svg
@@ -165,8 +240,20 @@ export default function Hero() {
                 className="absolute -bottom-5 -right-8 w-28 h-28 text-secondary/15 z-10"
                 viewBox="0 0 100 100"
               >
-                <polygon points="50,10 90,40 70,90 30,90 10,40" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" strokeWidth="1" />
+                <polygon
+                  points="50,10 90,40 70,90 30,90 10,40"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="15"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                />
               </motion.svg>
             </div>
           </motion.div>
@@ -180,20 +267,38 @@ export default function Hero() {
           >
             <motion.div variants={itemVariants}>
               <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-primary via-secondary to-blue-600 bg-clip-text text-transparent leading-tight">
-                Hi, I'm<br />Rahematullah
+                Hi, I'm
+                <br />
+                Rahematullah
               </h1>
             </motion.div>
 
-            <motion.p variants={itemVariants} className="text-xl sm:text-2xl font-semibold text-secondary mb-3 md:mb-4">
+            <motion.p
+              variants={itemVariants}
+              className="text-xl sm:text-2xl font-semibold text-secondary mb-3 md:mb-4"
+            >
               Full Stack Developer | Web & AI Enthusiast
             </motion.p>
 
-            <motion.p variants={itemVariants} className="text-base md:text-lg text-gray-700 mb-4 md:mb-4 leading-relaxed max-w-lg">
-              I craft beautiful, responsive web applications using modern technologies like React, Node.js & MongoDB. As a Lead Web Developer Intern at <span className="font-semibold text-secondary">Kite Media & Co.</span>, I'm passionate about delivering scalable solutions through cross-functional collaboration.
+            <motion.p
+              variants={itemVariants}
+              className="text-base md:text-lg text-gray-700 mb-4 md:mb-4 leading-relaxed max-w-lg"
+            >
+              I craft beautiful, responsive web applications using modern
+              technologies like React, Node.js & MongoDB. As a Lead Web
+              Developer Intern at{" "}
+              <span className="font-semibold text-secondary">
+                Kite Media & Co.
+              </span>
+              , I'm passionate about delivering scalable solutions through
+              cross-functional collaboration.
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-col gap-3 md:gap-4 mb-8 md:mb-6">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col gap-3 md:gap-4 mb-8 md:mb-6"
+            >
               <motion.a
                 href="#projects"
                 whileHover={{ scale: 1.05, y: -5 }}
@@ -228,7 +333,7 @@ export default function Hero() {
                   download
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex-1 px-4 md:px-8 py-3 md:py-4 bg-white/10 text-primary rounded-lg font-semibold hover:bg-white/20 border border-white/30 backdrop-blur-md transition-all duration-200 text-center text-sm md:text-base"
+                  className="flex-1 px-4 md:px-8 py-3 md:py-4 border-2 border-secondary/50 text-secondary rounded-lg font-semibold hover:bg-secondary/20 hover:border-secondary backdrop-blur-sm transition-all duration-200 text-center text-sm md:text-base"
                 >
                   Resume
                 </motion.a>
@@ -236,31 +341,74 @@ export default function Hero() {
             </motion.div>
 
             {/* Social Links */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 md:gap-6 md:justify-end justify-center">
-              <motion.a
-                whileHover={{ scale: 1.2, y: -5 }}
-                whileTap={{ scale: 0.9 }}
-                href="https://github.com/rkbalolkhan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-100 hover:bg-secondary hover:text-white text-gray-700 flex items-center justify-center transition-all duration-200 group"
-              >
-                <svg className="h-5 w-5 md:h-6 md:w-6 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2, y: -5 }}
-                whileTap={{ scale: 0.9 }}
-                href="https://www.linkedin.com/in/rkbalolkhan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-100 hover:bg-secondary hover:text-white text-gray-700 flex items-center justify-center transition-all duration-200 group"
-              >
-                <svg className="h-5 w-5 md:h-6 md:w-6 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
-              </motion.a>
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap gap-4 md:gap-6 md:justify-end justify-center"
+            >
+              {[
+                { icon: FaGithub, url: 'https://github.com/rkbalolkhan', label: 'GitHub' },
+                { icon: FaLinkedinIn, url: 'https://www.linkedin.com/in/rkbalolkhan', label: 'LinkedIn' },
+              ].map((social, idx) => {
+                const Icon = social.icon
+                return (
+                  <motion.div
+                    key={idx}
+                    whileHover="hover"
+                    initial="initial"
+                    className="relative group"
+                  >
+                    {/* Glow effect background */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-secondary/40 to-secondary/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      variants={{
+                        initial: { opacity: 0 },
+                        hover: { opacity: 1 },
+                      }}
+                    />
+                    
+                    {/* Main button */}
+                    <motion.a
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-secondary/30 to-secondary/10 border border-secondary/40 flex items-center justify-center text-white backdrop-blur-md"
+                      variants={{
+                        initial: { scale: 1, rotate: 0 },
+                        hover: {
+                          scale: 1.15,
+                          rotate: 10,
+                          transition: { type: 'spring', stiffness: 400, damping: 10 },
+                        },
+                      }}
+                      whileTap={{ scale: 0.9, rotate: 0 }}
+                      title={social.label}
+                    >
+                      {/* Icon animation */}
+                      <motion.div
+                        variants={{
+                          initial: { y: 0, rotate: 0 },
+                          hover: { y: -2, rotate: 15 },
+                        }}
+                        transition={{ type: 'spring', stiffness: 300 }}
+                      >
+                        <Icon size={24} className="drop-shadow-lg" />
+                      </motion.div>
+                    </motion.a>
+
+                    {/* Label on hover */}
+                    <motion.span
+                      className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-gray-700 font-semibold whitespace-nowrap opacity-0 bg-white/80 backdrop-blur-sm px-2 py-1 rounded"
+                      variants={{
+                        initial: { opacity: 0, y: -5 },
+                        hover: { opacity: 1, y: 0 },
+                      }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {social.label}
+                    </motion.span>
+                  </motion.div>
+                )
+              })}
             </motion.div>
           </motion.div>
         </div>
@@ -272,11 +420,23 @@ export default function Hero() {
         transition={{ duration: 2, repeat: Infinity }}
         className="hidden md:flex absolute bottom-14 left-1/2 transform -translate-x-1/2 flex-col items-center gap-2"
       >
-        <span className="text-gray-600 text-sm font-medium">Scroll to explore</span>
-        <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        <span className="text-gray-600 text-sm font-medium">
+          Scroll to explore
+        </span>
+        <svg
+          className="w-6 h-6 text-secondary"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
         </svg>
       </motion.div>
     </section>
-  )
+  );
 }

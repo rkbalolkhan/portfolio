@@ -158,9 +158,57 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/10 to-transparent"
+      className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/10 to-transparent relative overflow-hidden"
     >
-      <div className="w-full max-w-7xl mx-auto">
+      {/* Animated SVG Vectors */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Grid pattern of dots */}
+        <svg className="hidden md:block absolute w-full h-full opacity-10" viewBox="0 0 1200 800" preserveAspectRatio="none">
+          <defs>
+            <pattern id="dots" x="50" y="50" width="100" height="100" patternUnits="userSpaceOnUse">
+              <circle cx="50" cy="50" r="1" fill="currentColor" className="text-secondary" />
+            </pattern>
+          </defs>
+          <rect width="1200" height="800" fill="url(#dots)" />
+        </svg>
+
+        {/* Animated skill connection lines */}
+        <svg className="hidden lg:block absolute w-full h-full opacity-15" viewBox="0 0 1200 800" preserveAspectRatio="none">
+          <motion.path
+            d="M 100 200 Q 300 100, 500 200 T 900 200"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            className="text-secondary"
+            animate={{ opacity: [0.2, 0.5, 0.2] }}
+            transition={{ duration: 4, repeat: Infinity }}
+          />
+          <motion.path
+            d="M 200 600 L 1000 400"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            className="text-secondary"
+            animate={{ opacity: [0.1, 0.3, 0.1], pathLength: [0, 1] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          />
+        </svg>
+
+        {/* Rotating decorative circles */}
+        <motion.svg
+          animate={{ rotate: -360 }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="hidden lg:block absolute -bottom-40 -left-40 w-80 h-80 text-secondary/8"
+          viewBox="0 0 100 100"
+        >
+          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <path d="M50 10 Q70 30 70 50 Q70 70 50 70 Q30 70 30 50 Q30 30 50 10" fill="none" stroke="currentColor" strokeWidth="0.5" />
+        </motion.svg>
+      </div>
+
+      <div className="w-full max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -78,6 +78,43 @@ export default function About() {
 
   return (
     <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/20 to-primary/5 backdrop-blur-xl border-y border-secondary/20 overflow-hidden">
+      {/* Animated SVG Vectors */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Animated connecting lines */}
+        <svg className="hidden md:block absolute w-full h-full opacity-20" viewBox="0 0 1200 800" preserveAspectRatio="none">
+          <motion.path
+            d="M 0 300 Q 300 200, 600 300 T 1200 300"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="text-secondary"
+            animate={{ opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 4, repeat: Infinity }}
+          />
+          <motion.path
+            d="M 100 100 L 1100 600"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            className="text-secondary"
+            animate={{ opacity: [0.1, 0.3, 0.1], pathLength: [0, 1] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          />
+        </svg>
+
+        {/* Decorative rotating element */}
+        <motion.svg
+          animate={{ rotate: 360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="hidden lg:block absolute -top-20 right-20 w-48 h-48 text-secondary/8"
+          viewBox="0 0 100 100"
+        >
+          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" />
+        </motion.svg>
+      </div>
+
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
