@@ -16,43 +16,46 @@ A professional, fast, and modern portfolio website built with React + Vite on th
 
 ```
 portfolio/
-├── client/                    # React + Vite frontend
+├── client/                           # React + Vite frontend
 │   ├── src/
-│   │   ├── components/       # Reusable components
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Hero.jsx
-│   │   │   ├── About.jsx
-│   │   │   ├── Skills.jsx
-│   │   │   ├── Projects.jsx
-│   │   │   ├── Experience.jsx
-│   │   │   ├── Contact.jsx
-│   │   │   └── Footer.jsx
-│   │   ├── pages/           # Page components
+│   │   ├── components/              # Reusable UI components
+│   │   │   ├── Navbar.jsx           # Navigation with scroll detection
+│   │   │   ├── Hero.jsx             # Landing section with CTA
+│   │   │   ├── About.jsx            # Developer story & timeline
+│   │   │   ├── Skills.jsx           # Technical skills with categories
+│   │   │   ├── Projects.jsx         # Showcase of projects
+│   │   │   ├── Experience.jsx       # Work timeline with achievements
+│   │   │   ├── Contact.jsx          # Contact form & information
+│   │   │   └── Footer.jsx           # Footer with links & socials
+│   │   ├── pages/                   # Page components
 │   │   │   └── Home.jsx
-│   │   ├── assets/          # Images and static files
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   ├── index.html
-│   ├── vite.config.js
-│   ├── tailwind.config.js
+│   │   ├── assets/                  # Images and static files
+│   │   ├── App.jsx                  # Main app component
+│   │   ├── main.jsx                 # React entry point
+│   │   └── index.css                # Global styles
+│   ├── public/                      # Static files
+│   ├── index.html                   # HTML entry point
+│   ├── vite.config.js               # Vite configuration
+│   ├── tailwind.config.js           # Tailwind CSS config
+│   ├── postcss.config.js            # PostCSS config
 │   ├── package.json
 │   └── README.md
 │
-├── server/                    # Node.js + Express backend
+├── server/                          # Node.js + Express backend
 │   ├── controllers/
-│   │   └── contactController.js
+│   │   └── contactController.js     # Email handling logic
 │   ├── routes/
-│   │   └── contactRoutes.js
+│   │   └── contactRoutes.js         # Contact form routes
 │   ├── middleware/
-│   │   └── validation.js
-│   ├── app.js
-│   ├── server.js
+│   │   └── validation.js            # Input validation middleware
+│   ├── server.js                    # Express server entry point
 │   ├── package.json
-│   ├── .env.example
+│   ├── .env.example                 # Environment variables template
 │   └── README.md
 │
-└── README.md
+├── package.json                     # Root workspace scripts
+├── render.yaml                      # Render deployment config
+└── README.md                        # This file
 ```
 
 ## 🛠️ Tech Stack
@@ -80,23 +83,34 @@ portfolio/
 
 ### Running Locally
 
-**Terminal 1 - Frontend:**
+**Option 1: Run both services from root**
 ```bash
+# Terminal 1 - Frontend development
+npm run dev --prefix client
+
+# Terminal 2 - Backend development
+npm run dev --prefix server
+```
+
+**Option 2: Individual terminals**
+```bash
+# Frontend (http://localhost:5173)
 cd client
 npm install
 npm run dev
-```
-Frontend will be available at `http://localhost:5173`
 
-**Terminal 2 - Backend:**
-```bash
+# Backend (http://localhost:5000)
 cd server
 npm install
 cp .env.example .env
 # Configure .env with your email credentials
 npm run dev
 ```
-Backend will run on `http://localhost:5000`
+
+**Note**: Update `client/.env` if backend runs on different port:
+```
+VITE_API_URL=http://localhost:5000
+```
 
 ## 🔧 Configuration
 
@@ -146,18 +160,45 @@ Update content in component files:
 
 ## 🚀 Deployment
 
-### Frontend (Vercel)
-```bash
-cd client
-npm run build
-# Deploy dist folder to Vercel
-```
+### Deploy to Render (Recommended)
 
-### Backend (Heroku/Railway)
+1. **Push to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Deployment ready"
+   git push origin main
+   ```
+
+2. **Connect Render**:
+   - Go to https://dashboard.render.com
+   - Click "New +" → "Web Service"
+   - Select your GitHub repository
+   - Render will auto-detect `render.yaml` configuration
+
+3. **Configuration** (auto-configured via `render.yaml`):
+   - **Build Command**: `npm run build`
+   - **Start Command**: `npm start`
+   - **Environment**: Node.js 18+
+
+4. **Add Environment Variables** (in Render Dashboard):
+   ```
+   NODE_ENV = production
+   EMAIL_SERVICE = gmail
+   EMAIL_USER = your-email@gmail.com
+   EMAIL_PASSWORD = your-app-password
+   ADMIN_EMAIL = your-email@gmail.com
+   ```
+
+5. **Deploy**:
+   - Click "Create Web Service"
+   - Monitor build logs
+   - Your site will be live at `https://portfolio-xxxxx.onrender.com`
+
+### Local Build
+
 ```bash
-cd server
-npm install
-npm start
+npm run build      # Builds client and prepares server
+npm start          # Runs server with client as static files
 ```
 
 ## 📱 Browser Support
@@ -170,15 +211,20 @@ npm start
 ## 📝 Next Steps
 
 1. ✅ Project structure created
-2. ⬜ Add your profile image
-3. ⬜ Update your information (name, title, bio)
-4. ⬜ Add your projects with links
-5. ⬜ Update contact information
-6. ⬜ Set up email credentials
-7. ⬜ Test contact form locally
-8. ⬜ Deploy frontend to Vercel
-9. ⬜ Deploy backend to Heroku/Railway
-10. ⬜ Configure custom domain
+2. ✅ Frontend & Backend configured
+3. ⬜ Add your profile image to `client/public/images/`
+4. ⬜ Update your information in components:
+   - Name, title, bio (Hero, About)
+   - Skills and technologies (Skills)
+   - Projects with descriptions (Projects)
+   - Work experience (Experience)
+   - Contact information (Contact)
+5. ⬜ Set up email credentials in `.env`
+6. ⬜ Test contact form locally
+7. ⬜ Configure custom domain on Render
+8. ⬜ Push to GitHub
+9. ⬜ Deploy to Render using GitHub integration
+10. ⬜ Monitor deployment and test live site
 
 ## 📄 License
 
