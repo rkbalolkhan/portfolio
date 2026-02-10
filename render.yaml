@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: portfolio
+    env: node
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 18.17.1

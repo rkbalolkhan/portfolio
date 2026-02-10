@@ -2,5 +2,10 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Modern portfolio with React + Vite + Node.js",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server",
+    "dev": "npm start --prefix server"
+  }
 }
