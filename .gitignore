@@ -1,0 +1,15 @@
+# Dependencies installed with:
+# cd client && npm install
+# cd ../server && npm install
+
+.DS_Store
+node_modules/
+dist/
+.env
+.env.local
+*.log
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

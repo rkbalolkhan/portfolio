@@ -1,0 +1,6 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Modern portfolio with React + Vite + Node.js",
+  "private": true
+}
