@@ -203,9 +203,7 @@ export default function Footer() {
           <p className="text-white/60 text-sm text-center md:text-left">
             © {currentYear} Rahematullah A. Qayyum Balolkhan. All rights reserved.
           </p>
-          <p className="text-white/60 text-sm">
-            Built with <span className="text-secondary font-semibold">React</span> + <span className="text-secondary font-semibold">Vite</span> + <span className="text-secondary font-semibold">Tailwind</span>
-          </p>
+      
         </motion.div>
       </div>
     </footer>
