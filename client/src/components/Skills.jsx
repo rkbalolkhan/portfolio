@@ -339,8 +339,8 @@ export default function Skills() {
                     className="group relative cursor-pointer"
                   >
                     {/* Card */}
-                    <motion.div className="flex items-center content-center justify-center content-center relative h-full border-2 border-primary/30 rounded-2xl p-6 overflow-hidden backdrop-blur-sm bg-primary/5 transition-all duration-300 group-hover:border-secondary/70 group-hover:bg-primary/15 group-hover:shadow-lg">
-                      <div className="relative z-10">
+                    <motion.div className="flex flex-col items-center justify-center relative h-full border-2 border-primary/30 rounded-2xl p-6 overflow-hidden backdrop-blur-sm bg-primary/5 transition-all duration-300 group-hover:border-secondary/70 group-hover:bg-primary/15 group-hover:shadow-lg">
+                      <div className="relative z-10 w-full flex flex-col items-center justify-center">
                         {/* Icon Container with Floating Effect */}
                         {IconComponent ? (
                           <motion.div

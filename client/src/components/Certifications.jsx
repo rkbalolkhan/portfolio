@@ -7,11 +7,12 @@ export default function Certifications() {
       id: 0,
       title: "Meta Front-End Developer",
       issuer: "Meta (Facebook) via Coursera",
-      date: "March 2024",
+      date: "Mar 2024",
       description:
         "Completed professional certification covering modern frontend development including React, JavaScript, responsive design, version control, and UI development best practices.",
       skills: ["HTML", "CSS", "JavaScript", "React", "Git"],
-      verificationLink: "",
+      verificationLink:
+        "https://coursera.org/share/bde4e232ee272d602111c74ac17a59ad",
     },
     {
       id: 1,
@@ -19,20 +20,55 @@ export default function Certifications() {
       issuer: "The Hong Kong University of Science and Technology",
       date: "May 2024",
       description:
-        "Comprehensive full-stack training covering frontend, backend, and databases",
-      skills: ["Node.js", "MongoDB", "Express"],
+        "Certification covering software implementation, testing methodologies, debugging practices, and structured development processes.",
+      skills: [
+        "Software Development Lifecycle (SDLC)",
+        "Unit Testing",
+        "Integration Testing",
+        "Debugging Techniques",
+        "Code Validation",
+        "Quality Assurance",
+      ],
       verificationLink:
         "https://coursera.org/share/52455d489c12702154bc2885ab46cdad",
     },
     {
       id: 2,
-      title: "UI/UX Design Fundamentals",
-      issuer: "Design Excellence Training",
-      date: "Oct 2025",
+      title: "Crash Course on Python",
+      issuer: "Google (via Coursera)",
+      date: "Dec 2023",
       description:
-        "Foundation in design principles, user experience, and visual communication",
-      skills: ["Design", "UX", "Figma"],
-      verificationLink: "",
+        "Foundational Python certification covering programming basics, data structures, and object-oriented principles.",
+      skills: [
+        "Python Fundamentals",
+        "Data Structures in Python",
+        "Functions & Modules",
+        "Object-Oriented Programming",
+        "Error Handling",
+        "File Handling",
+      ],
+      verificationLink:
+        "https://coursera.org/share/cd3f9bc46ed5931f8103dba010de5f11",
+    },
+    {
+      id: 3,
+      title: "C Programming Language – Live Summer Training",
+      issuer: "CSE Pathshala",
+      date: "June 2025 – July 2025",
+      description:
+        "Completed a 35+ hour instructor-led training program covering foundational and intermediate C programming concepts with hands-on implementation and structured problem-solving practice.",
+      skills: [
+        "C Programming",
+        "Pointers & Memory Management",
+        "Dynamic Memory Allocation",
+        "File Handling",
+        "Control Structures",
+        "Debugging Techniques",
+        "Arrays & Structures",
+        "Algorithmic Problem Solving",
+      ],
+      verificationLink:
+        "https://drive.google.com/file/d/1AtObkJtLPadZDq03NZF79JyiCFpuXQ1C/view?usp=sharing",
     },
   ];
 
@@ -159,7 +195,7 @@ export default function Certifications() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
         >
           {certifications.map((cert) => (
             <motion.div
