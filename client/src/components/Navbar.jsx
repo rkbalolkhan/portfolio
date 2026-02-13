@@ -1,10 +1,19 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiMenu, FiX, FiCode } from 'react-icons/fi'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [copiedEmail, setCopiedEmail] = useState(false)
+  const email = 'rk.balolkhan@gmail.com'
+
+  const handleEmailCopy = () => {
+    navigator.clipboard.writeText(email)
+    setCopiedEmail(true)
+    setTimeout(() => setCopiedEmail(false), 2000)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,12 +69,48 @@ export default function Navbar() {
         </div>
 
         {/* Email Button */}
-        <a
-          href="mailto:rk.balolkhan@gmail.com"
-          className={`flex-shrink-0 bg-white/90 text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-white transition-all duration-200 whitespace-nowrap border border-white/20 backdrop-blur-sm ${isScrolled ? '' : 'ml-auto'}`}
+        <motion.button
+          onClick={handleEmailCopy}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className={`flex-shrink-0 bg-white/90 text-black px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap border border-white/20 backdrop-blur-sm relative overflow-hidden ${isScrolled ? '' : 'ml-auto'} ${copiedEmail ? 'bg-green-500/90 text-white' : 'hover:bg-white'}`}
         >
-          rk.balolkhan@gmail.com
-        </a>
+          <motion.span
+            key={copiedEmail ? 'copied' : 'email'}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
+            {copiedEmail ? '✓ Copied!' : email}
+          </motion.span>
+        </motion.button>
+
+        {/* Social Links */}
+        <div className="flex-shrink-0 flex items-center gap-3">
+          <motion.a
+            href="https://github.com/rkbalolkhan"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.15, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-9 h-9 rounded-full bg-secondary/20 border border-secondary/40 flex items-center justify-center text-white hover:bg-secondary/30 transition-colors duration-200"
+            title="GitHub"
+          >
+            <FaGithub size={16} />
+          </motion.a>
+          <motion.a
+            href="https://www.linkedin.com/in/rkbalolkhan"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.15, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-9 h-9 rounded-full bg-secondary/20 border border-secondary/40 flex items-center justify-center text-white hover:bg-secondary/30 transition-colors duration-200"
+            title="LinkedIn"
+          >
+            <FaLinkedinIn size={16} />
+          </motion.a>
+        </div>
       </motion.div>
 
       {/* Mobile Navbar */}
@@ -114,18 +159,53 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="/resume.pdf"
+                href="/documents/pdf/rahematullah_cv.pdf"
                 onClick={() => setIsOpen(false)}
                 className="text-white hover:text-secondary font-medium transition-colors duration-200 py-2"
               >
                 Resume
               </a>
-              <a
-                href="mailto:rk.balolkhan@gmail.com"
-                className="bg-white text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200 transition-all duration-200 text-center mt-2"
+              <motion.button
+                onClick={() => {
+                  handleEmailCopy()
+                  setIsOpen(false)
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`bg-white text-black px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 text-center mt-2 w-full ${copiedEmail ? 'bg-green-500 text-white' : 'hover:bg-gray-200'}`}
               >
-                rk.balolkhan@gmail.com
-              </a>
+                <motion.span
+                  key={copiedEmail ? 'copied-mobile' : 'email-mobile'}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {copiedEmail ? '✓ Copied!' : email}
+                </motion.span>
+              </motion.button>
+              <div className="flex items-center justify-center gap-3 mt-4 pt-4 border-t border-secondary/20">
+                <motion.a
+                  href="https://github.com/rkbalolkhan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-9 h-9 rounded-full bg-secondary/20 border border-secondary/40 flex items-center justify-center text-white hover:bg-secondary/30 transition-colors duration-200"
+                >
+                  <FaGithub size={16} />
+                </motion.a>
+                <motion.a
+                  href="https://www.linkedin.com/in/rkbalolkhan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-9 h-9 rounded-full bg-secondary/20 border border-secondary/40 flex items-center justify-center text-white hover:bg-secondary/30 transition-colors duration-200"
+                >
+                  <FaLinkedinIn size={16} />
+                </motion.a>
+              </div>
             </div>
           </motion.div>
         )}

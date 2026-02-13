@@ -70,15 +70,48 @@ export default function Experience() {
   }
 
   return (
-    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/5 to-transparent relative overflow-hidden">
+    <section
+      id="experience"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/5 to-transparent relative overflow-hidden"
+    >
       {/* Animated Background Vectors */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Timeline connection nodes */}
-        <svg className="hidden lg:block absolute w-full h-full opacity-20" viewBox="0 0 1200 1000" preserveAspectRatio="none">
+        <svg
+          className="hidden lg:block absolute w-full h-full opacity-20"
+          viewBox="0 0 1200 1000"
+          preserveAspectRatio="none"
+        >
           {/* Experience connection points */}
-          <motion.circle cx="600" cy="150" r="4" fill="currentColor" className="text-secondary" animate={{ opacity: [0.3, 1, 0.3], r: [4, 6, 4] }} transition={{ duration: 2.5, repeat: Infinity }} />
-          <motion.circle cx="600" cy="550" r="4" fill="currentColor" className="text-secondary" animate={{ opacity: [0.5, 1, 0.5], r: [4, 6, 4] }} transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }} />
-          <motion.line x1="600" y1="160" x2="600" y2="540" stroke="currentColor" strokeWidth="1" className="text-secondary" animate={{ opacity: [0.1, 0.3, 0.1] }} transition={{ duration: 3, repeat: Infinity }} />
+          <motion.circle
+            cx="600"
+            cy="150"
+            r="4"
+            fill="currentColor"
+            className="text-secondary"
+            animate={{ opacity: [0.3, 1, 0.3], r: [4, 6, 4] }}
+            transition={{ duration: 2.5, repeat: Infinity }}
+          />
+          <motion.circle
+            cx="600"
+            cy="550"
+            r="4"
+            fill="currentColor"
+            className="text-secondary"
+            animate={{ opacity: [0.5, 1, 0.5], r: [4, 6, 4] }}
+            transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+          />
+          <motion.line
+            x1="600"
+            y1="160"
+            x2="600"
+            y2="540"
+            stroke="currentColor"
+            strokeWidth="1"
+            className="text-secondary"
+            animate={{ opacity: [0.1, 0.3, 0.1] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          />
         </svg>
 
         {/* Decorative circles */}
@@ -100,16 +133,55 @@ export default function Experience() {
           className="hidden lg:block absolute bottom-20 right-20 w-48 h-48 text-secondary/10"
           viewBox="0 0 100 100"
         >
-          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.5"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="30"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.5"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.5"
+          />
           {/* Experience role indicators */}
-          <motion.circle cx="50" cy="10" r="1.5" fill="currentColor" animate={{ opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 2.5, repeat: Infinity }} />
-          <motion.circle cx="90" cy="50" r="1.5" fill="currentColor" animate={{ opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 2.5, repeat: Infinity, delay: 0.3 }} />
+          <motion.circle
+            cx="50"
+            cy="10"
+            r="1.5"
+            fill="currentColor"
+            animate={{ opacity: [0.3, 0.8, 0.3] }}
+            transition={{ duration: 2.5, repeat: Infinity }}
+          />
+          <motion.circle
+            cx="90"
+            cy="50"
+            r="1.5"
+            fill="currentColor"
+            animate={{ opacity: [0.3, 0.8, 0.3] }}
+            transition={{ duration: 2.5, repeat: Infinity, delay: 0.3 }}
+          />
         </motion.svg>
 
         {/* Animated SVG lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-30 pointer-events-none" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <svg
+          className="absolute inset-0 w-full h-full opacity-30 pointer-events-none"
+          viewBox="0 0 1000 1000"
+          preserveAspectRatio="none"
+        >
           <motion.path
             d="M 0 200 Q 250 150, 500 200 T 1000 200"
             fill="none"
@@ -147,13 +219,16 @@ export default function Experience() {
             transition={{ duration: 4, repeat: Infinity }}
             className="inline-block mb-4"
           >
-            <span className="text-secondary font-semibold tracking-widest uppercase text-sm">My Journey</span>
+            <span className="text-secondary font-semibold tracking-widest uppercase text-sm">
+              My Journey
+            </span>
           </motion.div>
-          <h2 className="font-display text-6xl md:text-7xl font-bold text-primary mb-6">
+          <h2 className="font-display text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-blue-600 bg-clip-text text-transparent leading-tight">
             Experience
           </h2>
           <p className="text-lg text-primary/60 max-w-2xl mx-auto">
-            From rapid learning to team leadership—crafting beautiful web experiences and mentoring talented developers
+            From rapid learning to team leadership—crafting beautiful web
+            experiences and mentoring talented developers
           </p>
         </motion.div>
 
@@ -179,8 +254,8 @@ export default function Experience() {
           </div>
 
           {experiences.map((exp, index) => {
-            const Icon = exp.icon
-            const isExpanded = expandedId === exp.id
+            const Icon = exp.icon;
+            const isExpanded = expandedId === exp.id;
 
             return (
               <motion.div
@@ -223,7 +298,7 @@ export default function Experience() {
                 <div className="hidden md:block">
                   <div className="flex gap-0 items-start">
                     {/* Left Column */}
-                    <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12' : ''}`}>
+                    <div className={`w-1/2 ${index % 2 === 0 ? "pr-12" : ""}`}>
                       {index % 2 === 0 && (
                         <ExperienceCard
                           exp={exp}
@@ -253,7 +328,7 @@ export default function Experience() {
                     </div>
 
                     {/* Right Column */}
-                    <div className={`w-1/2 ${index % 2 === 1 ? 'pl-12' : ''}`}>
+                    <div className={`w-1/2 ${index % 2 === 1 ? "pl-12" : ""}`}>
                       {index % 2 === 1 && (
                         <ExperienceCard
                           exp={exp}
@@ -268,7 +343,7 @@ export default function Experience() {
                   </div>
                 </div>
               </motion.div>
-            )
+            );
           })}
         </motion.div>
 
@@ -286,13 +361,14 @@ export default function Experience() {
             className="inline-block"
           >
             <p className="text-primary/50 text-sm font-medium">
-              Ready to see what's next? <span className="text-secondary">→</span>
+              Ready to see what's next?{" "}
+              <span className="text-secondary">→</span>
             </p>
           </motion.div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
 
 function ExperienceCard({ exp, isExpanded, setExpandedId, containerVariants, achievementVariants, textAlign = 'left' }) {

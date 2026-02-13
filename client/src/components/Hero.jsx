@@ -106,14 +106,43 @@ export default function Hero() {
           className="hidden lg:block absolute bottom-20 right-40 w-32 h-32 text-secondary/8 z-10"
           viewBox="0 0 100 100"
         >
-          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          <path d="M50 10 L50 90 M10 50 L90 50" stroke="currentColor" strokeWidth="0.5" />
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.5"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="30"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.5"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.5"
+          />
+          <path
+            d="M50 10 L50 90 M10 50 L90 50"
+            stroke="currentColor"
+            strokeWidth="0.5"
+          />
         </motion.svg>
 
         {/* Animated connecting lines */}
-        <svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 800" preserveAspectRatio="none">
+        <svg
+          className="hidden md:block absolute inset-0 w-full h-full pointer-events-none"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+        >
           <motion.path
             d="M 100 200 Q 400 150, 600 250 T 1100 200"
             fill="none"
@@ -266,10 +295,27 @@ export default function Hero() {
             className="flex flex-col justify-center "
           >
             <motion.div variants={itemVariants}>
-              <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-primary via-secondary to-blue-600 bg-clip-text text-transparent leading-tight">
-                Hi, I'm
-                <br />
-                Rahematullah
+              <h1 className="font-display mb-4 md:mb-6 leading-tight">
+                <motion.span
+                  className="block text-2xl sm:text-3xl md:text-4xl font-bold mb-2 flex items-center gap-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <motion.span
+                    animate={{ rotate: [0, 20, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                    className="text-3xl sm:text-4xl"
+                  >
+                    👋
+                  </motion.span>
+                  <span className="bg-gradient-to-r from-secondary via-blue-500 to-secondary bg-clip-text text-transparent">
+                    Hi, I'm
+                  </span>
+                </motion.span>
+                <span className="block text-5xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-secondary via-blue-500 to-secondary bg-clip-text text-transparent">
+                  Rahematullah
+                </span>
               </h1>
             </motion.div>
 
@@ -277,21 +323,17 @@ export default function Hero() {
               variants={itemVariants}
               className="text-xl sm:text-2xl font-semibold text-secondary mb-3 md:mb-4"
             >
-              Full Stack Developer | Web & AI Enthusiast
+              Full Stack Developer | Machine Learning Developer
             </motion.p>
 
             <motion.p
               variants={itemVariants}
               className="text-base md:text-lg text-gray-700 mb-4 md:mb-4 leading-relaxed max-w-lg"
             >
-              I craft beautiful, responsive web applications using modern
-              technologies like React, Node.js & MongoDB. As a Lead Web
-              Developer Intern at{" "}
-              <span className="font-semibold text-secondary">
-                Kite Media & Co.
-              </span>
-              , I'm passionate about delivering scalable solutions through
-              cross-functional collaboration.
+              I design and build scalable web applications and intelligent
+              systems using React, Node.js, Python, and modern ML frameworks. I
+              focus on clean architecture, performance optimization, and
+              real-world problem solving.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -306,7 +348,7 @@ export default function Hero() {
                 className="group px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-secondary to-blue-500 text-white rounded-lg font-semibold hover:shadow-xl transition-all duration-200 text-center relative  text-sm md:text-base w-full md:w-auto"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  View Projects
+                  Explore Projects
                   <motion.span
                     initial={{ x: 0 }}
                     groupHover={{ x: 5 }}
@@ -338,77 +380,6 @@ export default function Hero() {
                   Resume
                 </motion.a>
               </div>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap gap-4 md:gap-6 md:justify-end justify-center"
-            >
-              {[
-                { icon: FaGithub, url: 'https://github.com/rkbalolkhan', label: 'GitHub' },
-                { icon: FaLinkedinIn, url: 'https://www.linkedin.com/in/rkbalolkhan', label: 'LinkedIn' },
-              ].map((social, idx) => {
-                const Icon = social.icon
-                return (
-                  <motion.div
-                    key={idx}
-                    whileHover="hover"
-                    initial="initial"
-                    className="relative group"
-                  >
-                    {/* Glow effect background */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-secondary/40 to-secondary/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      variants={{
-                        initial: { opacity: 0 },
-                        hover: { opacity: 1 },
-                      }}
-                    />
-                    
-                    {/* Main button */}
-                    <motion.a
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-secondary/30 to-secondary/10 border border-secondary/40 flex items-center justify-center text-white backdrop-blur-md"
-                      variants={{
-                        initial: { scale: 1, rotate: 0 },
-                        hover: {
-                          scale: 1.15,
-                          rotate: 10,
-                          transition: { type: 'spring', stiffness: 400, damping: 10 },
-                        },
-                      }}
-                      whileTap={{ scale: 0.9, rotate: 0 }}
-                      title={social.label}
-                    >
-                      {/* Icon animation */}
-                      <motion.div
-                        variants={{
-                          initial: { y: 0, rotate: 0 },
-                          hover: { y: -2, rotate: 15 },
-                        }}
-                        transition={{ type: 'spring', stiffness: 300 }}
-                      >
-                        <Icon size={24} className="drop-shadow-lg" />
-                      </motion.div>
-                    </motion.a>
-
-                    {/* Label on hover */}
-                    <motion.span
-                      className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-gray-700 font-semibold whitespace-nowrap opacity-0 bg-white/80 backdrop-blur-sm px-2 py-1 rounded"
-                      variants={{
-                        initial: { opacity: 0, y: -5 },
-                        hover: { opacity: 1, y: 0 },
-                      }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {social.label}
-                    </motion.span>
-                  </motion.div>
-                )
-              })}
             </motion.div>
           </motion.div>
         </div>

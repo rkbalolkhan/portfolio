@@ -1,49 +1,95 @@
 import { motion } from 'framer-motion'
 import { FiGithub, FiExternalLink, FiArrowRight } from 'react-icons/fi'
-import { SiReact, SiMongodb, SiPython } from 'react-icons/si'
+import { SiReact, SiMongodb, SiPython, SiHtml5 } from "react-icons/si";
 
 export default function Projects() {
   const projects = [
     {
-      title: 'AbodeAway',
-      description: 'Full-stack vacation rental platform with 100+ verified properties. Integrated Mapbox APIs for interactive property maps, reducing bounce rate by 25%.',
-      tech: ['Bootstrap 5', 'EJS', 'Node.js', 'Express', 'MongoDB'],
+      title: "AbodeAway",
+      description:
+        "Full-stack vacation rental platform with 100+ verified properties. Integrated Mapbox APIs for interactive property maps, reducing bounce rate by 25%.",
+      tech: ["Bootstrap 5", "EJS", "Node.js", "Express", "MongoDB"],
       icon: SiReact,
-      gradient: 'from-blue-500 to-cyan-500',
+      gradient: "from-blue-500 to-cyan-500",
       stats: [
-        { label: '100+', desc: 'Properties' },
-        { label: '25%', desc: 'Bounce ↓' },
+        { label: "100+", desc: "Properties" },
+        { label: "25%", desc: "Bounce ↓" },
       ],
-      github: 'https://github.com/rkbalolkhan',
-      live: '#',
+      github: "https://github.com/rkbalolkhan/abobe-away",
+      live: "",
     },
     {
-      title: 'RoadCast-AI',
-      description: 'AI-powered podcast recommendation chatbot using Gemini API. Improved intent classification by 35% and reduced response time from 30-40s to under 5s.',
-      tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Node.js', 'REST APIs'],
+      title: "RoadCast-AI",
+      description:
+        "AI-powered podcast recommendation chatbot using Gemini API. Improved intent classification by 35% and reduced response time from 30-40s to under 5s.",
+      tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "REST APIs"],
       icon: FiArrowRight,
-      gradient: 'from-purple-500 to-pink-500',
+      gradient: "from-purple-500 to-pink-500",
       stats: [
-        { label: '35%', desc: 'Better' },
-        { label: '5s', desc: 'Response' },
+        { label: "35%", desc: "Better" },
+        { label: "5s", desc: "Response" },
       ],
-      github: 'https://github.com/rkbalolkhan',
-      live: '#',
+      github: "https://github.com/rkbalolkhan/RoadCast-AI",
+      live: "",
     },
     {
-      title: 'CoursePulse',
-      description: 'NLP-based MOOC feedback mining system. Processed 10,000+ feedback records with sentiment analysis and topic modeling extracting 5-8 key themes.',
-      tech: ['Python', 'NumPy', 'Pandas', 'Scikit-Learn', 'NLP', 'Matplotlib'],
+      title: "CoursePulse",
+      description:
+        "NLP-based MOOC feedback mining system. Processed 10,000+ feedback records with sentiment analysis and topic modeling extracting 5-8 key themes.",
+      tech: ["Python", "NumPy", "Pandas", "Scikit-Learn", "NLP", "Matplotlib"],
       icon: SiPython,
-      gradient: 'from-green-500 to-emerald-500',
+      gradient: "from-green-500 to-emerald-500",
       stats: [
-        { label: '10K+', desc: 'Records' },
-        { label: '8', desc: 'Themes' },
+        { label: "10K+", desc: "Records" },
+        { label: "8", desc: "Themes" },
       ],
-      github: 'https://github.com/rkbalolkhan',
-      live: '#',
+      github: "https://github.com/rkbalolkhan/feedback-mining-from-moocs",
+      live: "",
     },
-  ]
+    {
+      title: "Credit Card Fraud Detection (Unsupervised ML)",
+      description:
+        "Machine learning project focused on detecting fraudulent credit card transactions using unsupervised learning techniques. Implemented clustering and anomaly detection to identify suspicious patterns without labeled data.",
+      tech: ["Python", "NumPy", "Pandas", "Scikit-Learn", "Matplotlib"],
+      icon: SiPython,
+      gradient: "from-purple-500 to-indigo-500",
+      stats: [
+        { label: "Unsupervised", desc: "Learning Model" },
+        { label: "Anomaly", desc: "Detection Focus" },
+      ],
+      github:
+        "https://github.com/rkbalolkhan/ml2-unsupervised-creditcard-fraud",
+      live: "",
+    },
+    {
+      title: "SwapNest",
+      description:
+        "Full-stack web platform designed to enable users to exchange and manage listings seamlessly. Built with a structured backend architecture and responsive frontend to ensure smooth user interaction and efficient data handling.",
+      tech: ["EJS", "Tailwind", "Node.js", "Express", "MongoDB"],
+      icon: SiReact,
+      gradient: "from-pink-500 to-rose-500",
+      stats: [
+        { label: "Full-Stack", desc: "Architecture" },
+        { label: "Responsive", desc: "UI Design" },
+      ],
+      github: "https://github.com/rkbalolkhan/swapnest.git",
+      live: "",
+    },
+    {
+      title: "Delish",
+      description:
+        "Responsive restaurant website built with modern frontend technologies, featuring clean UI design, structured layout, and mobile-friendly navigation. Focused on visual presentation and user experience optimization.",
+      tech: ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
+      icon: SiHtml5,
+      gradient: "from-orange-500 to-red-500",
+      stats: [
+        { label: "Responsive", desc: "Design" },
+        { label: "UI/UX", desc: "Focused" },
+      ],
+      github: "https://github.com/rkbalolkhan/delish.git",
+      live: "",
+    },
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -232,26 +278,32 @@ export default function Projects() {
 
                     {/* Links */}
                     <div className="flex gap-3 pt-6 border-t border-gray-100">
-                      <motion.a
-                        href={project.github}
-                        whileHover={{ x: 5 }}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-gray-700 hover:text-secondary transition-colors font-semibold text-sm group/link"
-                      >
-                        <FiGithub size={16} />
-                        <span>Code</span>
-                        <FiArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-                      </motion.a>
-                      <motion.a
-                        href={project.live}
-                        whileHover={{ x: 5 }}
-                        className="flex items-center gap-2 text-gray-700 hover:text-secondary transition-colors font-semibold text-sm group/link"
-                      >
-                        <FiExternalLink size={16} />
-                        <span>Live</span>
-                        <FiArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-                      </motion.a>
+                      {project.github && (
+                        <motion.a
+                          href={project.github}
+                          whileHover={{ x: 5 }}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-gray-700 hover:text-secondary transition-colors font-semibold text-sm group/link"
+                        >
+                          <FiGithub size={16} />
+                          <span>Code</span>
+                          <FiArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                        </motion.a>
+                      )}
+                      {project.live && (
+                        <motion.a
+                          href={project.live}
+                          whileHover={{ x: 5 }}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-gray-700 hover:text-secondary transition-colors font-semibold text-sm group/link"
+                        >
+                          <FiExternalLink size={16} />
+                          <span>Live</span>
+                          <FiArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                        </motion.a>
+                      )}
                     </div>
                   </div>
 

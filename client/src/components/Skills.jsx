@@ -339,7 +339,7 @@ export default function Skills() {
                     className="group relative cursor-pointer"
                   >
                     {/* Card */}
-                    <motion.div className="relative h-full border-2 border-primary/30 rounded-2xl p-6 overflow-hidden backdrop-blur-sm bg-primary/5 transition-all duration-300 group-hover:border-secondary/70 group-hover:bg-primary/15 group-hover:shadow-lg">
+                    <motion.div className="flex items-center content-center justify-center content-center relative h-full border-2 border-primary/30 rounded-2xl p-6 overflow-hidden backdrop-blur-sm bg-primary/5 transition-all duration-300 group-hover:border-secondary/70 group-hover:bg-primary/15 group-hover:shadow-lg">
                       <div className="relative z-10">
                         {/* Icon Container with Floating Effect */}
                         {IconComponent ? (
@@ -350,7 +350,7 @@ export default function Skills() {
                                 : { y: 0, scale: 1 }
                             }
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="text-5xl mb-4 text-primary/80 group-hover:text-secondary transition-colors duration-300"
+                            className="flex align-center justify-center text-5xl mb-4 text-primary/80 group-hover:text-secondary transition-colors duration-300"
                           >
                             <IconComponent />
                           </motion.div>
@@ -369,7 +369,7 @@ export default function Skills() {
                         )}
 
                         {/* Skill Name */}
-                        <h4 className="font-display text-lg font-bold text-primary mb-2 group-hover:text-secondary transition-colors duration-300">
+                        <h4 className="text-center font-display text-lg font-bold text-primary mb-2 group-hover:text-secondary transition-colors duration-300">
                           {skillObj.name}
                         </h4>
 
@@ -380,14 +380,14 @@ export default function Skills() {
                             isHoveredSkill ? { opacity: 1 } : { opacity: 0.7 }
                           }
                           transition={{ duration: 0.3 }}
-                          className="text-sm text-primary/70 mb-4"
+                          className="text-center text-sm text-primary/70 mb-4"
                         >
                           {skillObj.usage}
                         </motion.p>
 
                         {/* Hover Arrow */}
                         <motion.div
-                          className="flex items-center gap-2 text-primary/50 group-hover:text-secondary"
+                          className="flex items-center justify-center gap-2 text-primary/50 group-hover:text-secondary"
                           animate={isHoveredSkill ? { x: 5 } : { x: 0 }}
                           transition={{ duration: 0.3 }}
                         >

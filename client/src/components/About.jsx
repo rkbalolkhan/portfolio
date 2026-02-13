@@ -35,53 +35,49 @@ export default function About() {
 
   const journeySteps = [
     {
-      title: 'Foundation',
-      description: 'Started learning web development with passion for clean code',
+      title: "Foundation",
+      description:
+        "Strong fundamentals in data structures, backend systems, and modern frontend development.",
       icon: FiCode,
-      color: 'blue',
+      color: "blue",
     },
     {
-      title: 'Growth',
-      description: 'Mastered React, Node.js, and MongoDB through real projects',
+      title: "Growth",
+      description:
+        "Continuously learning advanced system design, scalable architectures, and applied machine learning.",
       icon: FiBriefcase,
-      color: 'cyan',
+      color: "cyan",
     },
     {
-      title: 'Leadership',
-      description: 'Lead Web Developer Intern, collaborating across teams',
+      title: "Leadership",
+      description:
+        "Collaborative team contributor with experience coordinating development tasks and maintaining clean code standards.",
       icon: FiUsers,
-      color: 'purple',
+      color: "purple",
     },
     {
-      title: 'Innovation',
-      description: 'Focused on scalable solutions and continuous learning',
+      title: "Innovation",
+      description:
+        "Exploring AI-driven applications and intelligent automation to solve practical problems.",
       icon: FiZap,
-      color: 'pink',
+      color: "pink",
     },
-  ]
+  ];
 
-  const skills = [
-    { label: '15+', text: 'Websites Built', emoji: '🌐' },
-    { label: '20+', text: 'Technologies', emoji: '⚙️' },
-    { label: '100%', text: 'Satisfaction Rate', emoji: '⭐' },
-    { label: 'Full', text: 'Stack Expert', emoji: '🚀' },
-  ]
-
-  const competencies = [
-    { icon: SiReact, title: 'React', color: 'from-cyan-500' },
-    { icon: SiNodedotjs, title: 'Node.js', color: 'from-green-500' },
-    { icon: SiMongodb, title: 'MongoDB', color: 'from-green-600' },
-    { icon: FiCode, title: 'JavaScript', color: 'from-yellow-500' },
-    { icon: FiTarget, title: 'DSA', color: 'from-orange-500' },
-    { icon: FiAward, title: 'AI/ML', color: 'from-pink-500' },
-  ]
 
   return (
-    <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/20 to-primary/5 backdrop-blur-xl border-y border-secondary/20 overflow-hidden">
+    <section
+      id="about"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/20 to-primary/5 backdrop-blur-xl border-y border-secondary/20 overflow-hidden"
+    >
       {/* Animated SVG Vectors */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Animated connecting lines */}
-        <svg className="hidden md:block absolute w-full h-full opacity-20" viewBox="0 0 1200 800" preserveAspectRatio="none">
+        <svg
+          className="hidden md:block absolute w-full h-full opacity-20"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+        >
           <motion.path
             d="M 0 300 Q 300 200, 600 300 T 1200 300"
             fill="none"
@@ -109,9 +105,30 @@ export default function About() {
           className="hidden lg:block absolute -top-20 right-20 w-48 h-48 text-secondary/8"
           viewBox="0 0 100 100"
         >
-          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" />
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.5"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="30"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.5"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.5"
+          />
         </motion.svg>
       </div>
 
@@ -138,12 +155,20 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <span className="text-secondary font-semibold text-lg inline-block mb-4">Get to know me</span>
+          <span className="text-secondary font-semibold text-lg inline-block mb-4">
+            Get to know me
+          </span>
           <h2 className="font-display text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-blue-600 bg-clip-text text-transparent">
             About Me
           </h2>
-          <p className="text-lg text-primary max-w-3xl mx-auto leading-relaxed">
-            I'm a Full Stack Developer and Lead Web Developer Intern at Kite Media & Co., passionate about building scalable, beautiful web experiences with cutting-edge technologies.
+          <p className="md:text-lg text-primary max-w-3xl mx-auto leading-relaxed">
+            I specialize in full stack web development using React, Node.js, and
+            modern database systems, along with practical experience in machine
+            learning using Python and data-driven approaches.
+            <br />
+            My work focuses on performance, scalability, and structured
+            problem-solving — whether it’s building dynamic web applications or
+            developing intelligent systems.
           </p>
         </motion.div>
 
@@ -163,14 +188,16 @@ export default function About() {
                 My Journey
               </h3>
               <p className="text-gray-800 leading-relaxed mb-6">
-                I started with HTML and CSS, evolved through JavaScript and React, and now architect full-stack solutions that solve real problems.
+                I began with core web technologies and gradually expanded into
+                full stack development and machine learning, building solutions
+                that balance performance and usability.
               </p>
               <ul className="space-y-3">
                 {[
-                  { icon: '💡', text: 'Problem solver at heart' },
-                  { icon: '🚀', text: 'Always learning & growing' },
-                  { icon: '👥', text: 'Team player' },
-                  { icon: '⚡', text: 'Performance-focused' },
+                  { icon: "💡", text: "Structured Problem Solving" },
+                  { icon: "🚀", text: "Continuous Skill Development" },
+                  { icon: "👥", text: "Collaborative Mindset" },
+                  { icon: "⚡", text: "Performance & Scalability Focus" },
                 ].map((item, i) => (
                   <motion.li
                     key={i}
@@ -198,19 +225,15 @@ export default function About() {
           >
             <div className="space-y-4">
               {journeySteps.map((step, i) => {
-                const Icon = step.icon
+                const Icon = step.icon;
                 const colorMap = {
-                  blue: 'from-blue-500',
-                  cyan: 'from-cyan-500',
-                  purple: 'from-purple-500',
-                  pink: 'from-pink-500',
-                }
+                  blue: "from-blue-500",
+                  cyan: "from-cyan-500",
+                  purple: "from-purple-500",
+                  pink: "from-pink-500",
+                };
                 return (
-                  <motion.div
-                    key={i}
-                    variants={itemVariants}
-                    className="group"
-                  >
+                  <motion.div key={i} variants={itemVariants} className="group">
                     <div className="flex gap-4">
                       {/* Timeline dot */}
                       <div className="flex flex-col items-center">
@@ -230,17 +253,20 @@ export default function About() {
                         whileHover={{ x: 10 }}
                         className="bg-primary/10 backdrop-blur-xl rounded-2xl p-6 border border-secondary/30 flex-1 shadow-lg hover:shadow-xl hover:bg-primary/15 transition-all duration-300"
                       >
-                        <h4 className="font-display text-xl font-bold text-primary mb-2">{step.title}</h4>
-                        <p className="text-gray-800 text-sm leading-relaxed">{step.description}</p>
+                        <h4 className="font-display text-xl font-bold text-primary mb-2">
+                          {step.title}
+                        </h4>
+                        <p className="text-gray-800 text-sm leading-relaxed">
+                          {step.description}
+                        </p>
                       </motion.div>
                     </div>
                   </motion.div>
-                )
+                );
               })}
             </div>
           </motion.div>
         </div>
-
 
         {/* Final CTA */}
         <motion.div
@@ -251,9 +277,12 @@ export default function About() {
           className="text-center"
         >
           <div className="bg-primary/15 backdrop-blur-2xl border border-secondary/30 rounded-3xl p-12 shadow-xl">
-            <h3 className="font-display text-3xl font-bold text-primary mb-4">Let's Create Something Great</h3>
+            <h3 className="font-display text-3xl font-bold text-primary mb-4">
+              Let's Create Something Great
+            </h3>
             <p className="text-gray-800 text-lg mb-8 max-w-xl mx-auto">
-              I'm always excited to collaborate on meaningful projects. Let's connect and build the future together.
+              I'm always excited to collaborate on meaningful projects. Let's
+              connect and build the future together.
             </p>
             <motion.a
               href="#contact"
@@ -267,5 +296,5 @@ export default function About() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
