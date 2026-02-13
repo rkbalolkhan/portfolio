@@ -10,18 +10,19 @@ export default function Certifications() {
       date: "March 2024",
       description:
         "Completed professional certification covering modern frontend development including React, JavaScript, responsive design, version control, and UI development best practices.",
-      skills: ["HTML", "CSS", "JavaScript", "React", "Git"] ,
+      skills: ["HTML", "CSS", "JavaScript", "React", "Git"],
       verificationLink: "",
     },
     {
       id: 1,
-      title: "Full Stack Web Development",
-      issuer: "Web Development Academy",
-      date: "Nov 2025",
+      title: "Software Engineering: Implementation and Testing",
+      issuer: "The Hong Kong University of Science and Technology",
+      date: "May 2024",
       description:
         "Comprehensive full-stack training covering frontend, backend, and databases",
       skills: ["Node.js", "MongoDB", "Express"],
-      verificationLink: "",
+      verificationLink:
+        "https://coursera.org/share/52455d489c12702154bc2885ab46cdad",
     },
     {
       id: 2,
